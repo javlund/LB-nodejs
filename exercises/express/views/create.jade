@@ -1,0 +1,10 @@
+extends layout
+
+block title
+  title Lav ny opskrift
+
+block content
+    h3 Lad os høre om din opskrift
+    form(action="/create", method="post")
+      textarea(name="opskrift")
+      button(type="submit") Værsågod

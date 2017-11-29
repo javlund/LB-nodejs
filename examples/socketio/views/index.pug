@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Socket.io
+    script(src='/socket.io/socket.io.js')
+    script.
+      var socket = io();
+
+      socket.on('output', function(msg) {
+        document.getElementById('messagereceived').innerHTML = msg.message;
+      });
+
+      function sendmsg() {
+        var message = document.getElementById('messagetosend').value;
+        socket.emit('input', {message : message});
+      }
+  body
+    #messagereceived
+    input#messagetosend(type='text')
+    button(onclick='sendmsg();') Send besked

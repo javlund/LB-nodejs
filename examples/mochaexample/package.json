@@ -1,0 +1,12 @@
+{
+  "name": "mochaexample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc mocha && nyc report --reporter=lcov"
+  },
+  "author": "Jacob Avlund",
+  "license": "MIT"
+}

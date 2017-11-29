@@ -1,0 +1,24 @@
+extends layout
+
+block title
+  title Lav ny opskrift
+
+block content
+    h3 Lad os høre om din opskrift
+    if message
+      p(style={color: 'red'})= message
+    form(action="/create", method="post")
+      p
+        span Navn:
+          input(type=text, name="name")
+      p
+        span Ingredienser:
+          textarea(name="ingredients")
+      p
+        span Fremgangsmåde:
+          textarea(name="instructions")
+      p
+        span Tilberedelsestid:
+          input(type=number, name="preptime")
+      p
+        button(type="submit") Værsågod

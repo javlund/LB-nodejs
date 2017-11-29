@@ -1,0 +1,13 @@
+extends layout
+
+block title
+  title Opskrifterne
+
+block content
+    h3 Læs her de lækre opskrifter
+    each recipe in recipes
+      p Navn: #{recipe.name}
+      p Ingredienser: #{recipe.ingredients}
+      p Fremgangsmåde: #{recipe.instructions}
+      p Tilberedelsestid: #{recipe.prepTime} minutter
+      hr

@@ -1,0 +1,29 @@
+extends layout
+
+block title
+  title Opskrifterne
+  script(src='/socket.io/socket.io.js')
+  script(src='//code.jquery.com/jquery-1.11.2.min.js')
+  script.
+      var socket = io();
+
+      socket.on('newrecipes', function(recipe) {
+        var div = $('<div></div>');
+        div.append('<p>Navn: ' + recipe.name + '</p>');
+        div.append('<p>Ingredienser: ' + recipe.ingredients + '</p>');
+        div.append('<p>Fremgangsmåde: ' + recipe.instructions + '</p>');
+        div.append('<p>Tilberedelsestid: ' + recipe.prepTime + ' minutter</p>');
+        div.append('<hr />');
+        $('#recipes').append(div);
+      });
+
+block content
+    h3 Læs her de lækre opskrifter
+    div#recipes
+    each recipe in recipes
+      div
+        p Navn: #{recipe.name}
+        p Ingredienser: #{recipe.ingredients}
+        p Fremgangsmåde: #{recipe.instructions}
+        p Tilberedelsestid: #{recipe.prepTime} minutter
+        hr
