@@ -1,7 +1,7 @@
 const assert = require('assert');
 
 describe('Recipes', () => {
-  const recipes = require('../streams/recipes.js');
+  const recipes = require('../http/recipes.js');
   describe('#createRecipe', () => {
     it('should create a recipe in a file', done => {
       const data = 'Tomat og agurk';

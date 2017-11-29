@@ -21,6 +21,6 @@ switch(input.toLowerCase()) {
     });
     break;
   default:
-    console.log('Giv enten "read" eller "write" med som parameter.');
+    console.log('Giv enten "read", "write" eller "wipe" med som parameter.');
     process.exit();
 }

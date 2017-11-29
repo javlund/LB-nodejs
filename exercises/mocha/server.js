@@ -15,7 +15,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
   extended : false
 }));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
 
 app.get('/', (req, res) => {

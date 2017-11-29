@@ -5,6 +5,7 @@ const replacer = require('../http/replacer');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/recipes');
+mongoose.Promise = global.Promise;
 
 const recipeSchema = new mongoose.Schema({
   name : {

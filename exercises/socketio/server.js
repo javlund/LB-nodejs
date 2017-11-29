@@ -6,6 +6,7 @@ const socketio = require('socket.io');
 const http = require('http');
 
 mongoose.connect('mongodb://localhost/recipes');
+mongoose.Promise = global.Promise;
 
 const recipeSchema = new mongoose.Schema({
   name : {

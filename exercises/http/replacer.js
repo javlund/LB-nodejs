@@ -1,9 +1,12 @@
 const fs = require('fs');
 
+function convertLineBreaksToHtml(str) {
+  return str.replace(/\n/g, '<br />');
+}
+
 module.exports = {
-  insertIntoHtml : (innerFunc, outer, cb) => {
+  insertIntoHtml : (innerFunc, outer, callback) => {
     const placeholder = '[PLACEHOLDER]';
-    const that = this;
     fs.readFile(outer, (err, outTxt) => {
       if(err) {
         console.error(err);
@@ -14,17 +17,15 @@ module.exports = {
           console.error(err);
           process.exit();
         }
-        const inEscaped = that.convertLineBreaksToHtml(inTxt.toString());
+        const inEscaped = convertLineBreaksToHtml(inTxt.toString());
 
         const result = outTxt.toString().replace(placeholder, inEscaped);
-        cb(result);
+        callback(result);
       });
     });
   },
-  convertLineBreaksToHtml : str => {
-    return str.replace(/\n/g, '<br />');
-  },
   cleanupPostedData : data => {
     return data.replace(/\+/g, ' ').replace(/%0D%0A/g, '\n') + '\n';
-  }
+  },
+  convertLineBreaksToHtml
 }

@@ -1,6 +1,6 @@
 const http = require('http');
 const fs = require('fs');
-const recipes = require('../streams/recipes');
+const recipes = require('./recipes');
 const replacer = require('./replacer');
 
 const port = 5678;
