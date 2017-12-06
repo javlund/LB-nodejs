@@ -4,7 +4,7 @@ const client = mongo.MongoClient;
 
 client.connect('mongodb://localhost/mydb', (err, db) => {
   if(err) {
-    console.error('Error occured:', err);
+    console.error('Error occurred:', err);
     return;
   }
   const collection = db.collection('people');

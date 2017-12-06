@@ -13,8 +13,8 @@ const carSchema = new Schema({
 });
 
 // Mongoose har det ikke godt med arrow functions, da findSimilar har brug for at bruge this.
-carSchema.methods.findSimilar = function(cb) {
-  return this.model('Car').find({brand : this.brand}, cb);
+carSchema.methods.findSimilar = function(callback) {
+  return this.model('Car').find({brand : this.brand}, callback);
 };
 
 const Car = mongoose.model('Car', carSchema);

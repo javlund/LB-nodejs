@@ -8,11 +8,11 @@ switch(input.toLowerCase()) {
     break;
   case 'write':
     console.log('Bare gå i gang med at skrive opskriften, afslut med en tom linje.');
-    const cb = () => {
+    const callback = () => {
       console.log('Tak for dit bidrag.');
       process.exit();
     }
-    recipes.createRecipe(process.stdin, cb);
+    recipes.createRecipe(process.stdin, callback);
     break;
   case 'wipe':
     recipes.clearRecipes(() => {
