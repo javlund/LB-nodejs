@@ -6,7 +6,8 @@ module.exports = function(grunt) {
       options: {
         globals: {
           node: true
-        }
+        },
+        esversion: 6
       }
     },
     watch: {

@@ -15,12 +15,4 @@ class DiceEmitter extends EventEmitter {
   }
 }
 
-const dice = new DiceEmitter();
-
-dice.on('roll', value => {
-  console.log('Terningerne kastes, og vi fik ', value);
-});
-
-dice.on('six', () => {
-  console.log('Hurra, det var en sekser!');
-});
+module.exports = DiceEmitter;

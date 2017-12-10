@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express();
 
+const port = 2345;
+
 app.get('/', (req, res) => {
   res.end('Hit the root.');
 });
@@ -15,4 +17,6 @@ app.all('*', (req, res) => {
   res.end('This page does not exist!');
 });
 
-app.listen(2345);
+app.listen(port, () => {
+  console.log(`Lytter på port ${port}`);
+});

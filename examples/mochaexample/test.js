@@ -7,13 +7,15 @@ describe('Utils', function() {
       const result = utils.addThree(4);
       assert.equal(7, result);
     });
-  }),
+  });
+  
   describe('#removeDecimals', function() {
     it('should remove all decimals from the number', function() {
       const result = utils.removeDecimals(5.343);
       assert.equal(5, result);
     });
-  }),
+  });
+
   describe('#simpleServer', function() {
     
     beforeEach(function() {
@@ -37,7 +39,7 @@ describe('Utils', function() {
             throw new Error('Ikke det korrekte resultat');
           }*/
         });
-      })
+      });
     });
   });
 });

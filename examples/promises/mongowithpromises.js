@@ -6,7 +6,7 @@ let collection = null;
 
 client
   .connect('mongodb://localhost/mydb')
-  .then((db) => {
+  .then(db => {
     database = db;
     collection = database.collection('people');
     return collection.insert({name : 'Ann'});
